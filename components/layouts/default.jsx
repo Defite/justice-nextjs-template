@@ -14,7 +14,7 @@ export default function DefaultLayout({ children, page }) {
 				<meta charSet="utf-8" />
 				<meta name="viewport" content="width=device-width, initial-scale=1" />
 
-				<link rel="apple-touch-icon" href="/apple-touch-icon.png"/ >
+				<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
 				<link rel="icon" type="image/png" href="/touch-icon.png" sizes="192x192" />
 				<link rel="icon" type="image/png" href="/favicon.png" />
 			</Head>
@@ -29,8 +29,8 @@ export default function DefaultLayout({ children, page }) {
 					description: description,
 					images: data.seo.images.map((image) => ({
 						url: image.image,
-						width: image.height,
-						height: image.width,
+						width: image.width,
+						height: image.height,
 						alt: image.description
 					}))
 				}}
@@ -70,25 +70,9 @@ export default function DefaultLayout({ children, page }) {
 				<div className="container">{children}</div>
 			</section>
 
-			{page.call_to_action === 'Contact' && (
-				<section className="quote-section">
-					<p className="container">
-						<Link href="/contact">Contact us</Link> today to find out how we can help you. Your first consultation is free.
-					</p>
-				</section>
-			)}
-
-			{page.call_to_action === 'Blog' && (
-				<section className="quote-section">
-					<p className="container">
-						<Link href="/blog">Read our blog</Link> for an introduction and quick tips on various areas of the law.
-					</p>
-				</section>
-			)}
-
 			<footer>
 				<div className="container">
-					<div className="footer-columns" data-cms-editor-link="cloudcannon:collections/content/data/footer.json">
+					<div className="footer-columns">
 						{data.footer.map((column) => (
 							<ul className="footer-links" key={column.title}>
 								<li>
@@ -121,7 +105,7 @@ export default function DefaultLayout({ children, page }) {
 
 				<div className="legal-line">
 					<p className="container">
-						&copy; {new Date().getFullYear()} {data.company.company_name} &bull; <Link href="/terms">Terms</Link> &bull; Template by <Link href="https://cloudcannon.com/">CloudCannon</Link>
+						&copy; {new Date().getFullYear()} {data.company.company_name} &bull; Template by <Link href="https://cloudcannon.com/">CloudCannon</Link>
 					</p>
 				</div>
 			</footer>
